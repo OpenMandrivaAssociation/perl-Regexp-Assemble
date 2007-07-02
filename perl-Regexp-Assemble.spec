@@ -1,6 +1,6 @@
 %define module  Regexp-Assemble
 %define name    perl-%{module}
-%define version 0.28
+%define version 0.31
 %define release %mkrel 1
 
 Name:           %{name}
@@ -10,7 +10,7 @@ Summary:        Assemble multiple Regular Expressions into a single RE
 License:        GPL or Artistic
 Group:          Development/Perl
 URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Config/%{module}-%{version}.tar.bz2
+Source:         http://www.cpan.org/modules/by-module/Config/%{module}-%{version}.tar.gz
 %if %{mdkversion} < 1010
 Buildrequires:  perl-devel
 %endif
