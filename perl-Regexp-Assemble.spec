@@ -15,6 +15,7 @@ Source:         http://www.cpan.org/modules/by-module/Config/%{module}-%{version
 Buildrequires:  perl-devel
 %endif
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 Regexp::Assemble takes an arbitrary number of regular expressions and assembles
