@@ -1,6 +1,6 @@
 %define module  Regexp-Assemble
 %define name    perl-%{module}
-%define version 0.32
+%define version 0.33
 %define release %mkrel 1
 
 Name:           %{name}
