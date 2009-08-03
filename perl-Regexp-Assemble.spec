@@ -1,18 +1,18 @@
-%define module  Regexp-Assemble
-%define name    perl-%{module}
-%define version 0.34
-%define release %mkrel 1
+%define upstream_name    Regexp-Assemble
+%define upstream_version 0.34
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Assemble multiple Regular Expressions into a single RE
-License:        GPL or Artistic
-Group:          Development/Perl
-URL:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Regexp/%{module}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Assemble multiple Regular Expressions into a single RE
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Regexp/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Regexp::Assemble takes an arbitrary number of regular expressions and assembles
@@ -23,7 +23,7 @@ expression. This is interesting when you have several thousand patterns to deal
 with. Serious effort is made to produce the smallest pattern possible. 
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -47,5 +47,3 @@ rm -rf %{buildroot}
 %doc Changes README TODO eg
 %{perl_vendorlib}/Regexp
 %{_mandir}/*/*
-
-
